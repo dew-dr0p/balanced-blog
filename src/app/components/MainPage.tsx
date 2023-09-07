@@ -1,8 +1,14 @@
 import Banner from '@/app/components/Banner'
 import SectionHeader from '@/app/components/SectionHeader'
 import ArticleCardMain from '@/app/components/ArticleCardMain'
+import Posts from './Posts'
+import { sanityFetch } from '../../../sanity/lib/sanityFetch'
+import { SanityDocument } from 'next-sanity'
+import { postsQuery } from '../../../sanity/lib/queries'
 
-export default function MainPage() {
+export default async function MainPage() {
+  const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery})
+
   return (
     <div>
         <Banner />
@@ -13,6 +19,9 @@ export default function MainPage() {
             </div>
             <div>
                 <ArticleCardMain />
+            </div>
+            <div>
+              <Posts posts={posts} />
             </div>
         </section>
     </div>

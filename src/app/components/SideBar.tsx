@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import SectionHeader from '@/app/components/SectionHeader'
 import envelope from '../../../public/envelope.svg'
+import ArticleCardSide from './ArticleCardSide'
+import Categories from './Categories'
 
 export default function SideBar() {
   return (
-    <div className='grid max-w-sm'>
-        <div className='border border-border shadow-[0px_10px_10px_0px_rgba(0,_0,_0,_0.10)] overflow-hidden relative w-fit h-fit grid gap-3 p-5 place-items-center text-center justify-center'>
+    <div className='grid max-w-sm gap-9 auto-rows-max'>
+        <div className='border border-border shadow-[0px_10px_10px_0px_rgba(0,_0,_0,_0.10)] rounded-xl overflow-hidden relative w-fit h-fit grid gap-3 p-5 place-items-center text-center justify-center'>
             <Image
             src={envelope}
             alt='Envelope'
@@ -23,9 +25,11 @@ export default function SideBar() {
         </div>
         <div className='grid'>
             <SectionHeader title={'Popular Posts'} />
+            <ArticleCardSide />
         </div>
         <div className='grid'>
             <SectionHeader title={'Categories'} />
+            <Categories />
         </div>
     </div>
   )
