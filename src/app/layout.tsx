@@ -28,7 +28,7 @@ export default function RootLayout({
         </nav>
           {children}
         <footer>
-          <Footer></Footer>
+          <Footer />
         </footer>
       </body>
     </html>

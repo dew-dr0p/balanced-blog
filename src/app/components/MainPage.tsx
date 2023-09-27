@@ -1,18 +1,18 @@
 import Banner from '@/app/components/Banner'
 import SectionHeader from '@/app/components/SectionHeader'
 import ArticleCardMain from '@/app/components/ArticleCardMain'
-import Posts from './Posts'
+// import Posts from './Posts'
 import { sanityFetch, token } from '../../../sanity/lib/sanityFetch'
 import { SanityDocument } from 'next-sanity'
 import { postsQuery } from '../../../sanity/lib/queries'
-import { draftMode } from 'next/headers'
-import PreviewPosts from './PreviewPosts'
-import PreviewProvider from './PreviewProvider'
+// import { draftMode } from 'next/headers'
+// import PreviewPosts from './PreviewPosts'
+// import PreviewProvider from './PreviewProvider'
 
 export default async function MainPage() {
-  const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery})
-  const isDraftMode = draftMode().isEnabled
-  console.log(token, isDraftMode)
+  // const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery})
+  // const isDraftMode = draftMode().isEnabled
+  // console.log(token, isDraftMode)
 
   return (
     <div>
@@ -25,7 +25,7 @@ export default async function MainPage() {
             <div>
                 <ArticleCardMain />
             </div>
-            <div>
+            {/* <div>
               {
                 (isDraftMode && token) && 
                 <PreviewProvider token={token}>
@@ -33,7 +33,7 @@ export default async function MainPage() {
                 </PreviewProvider>
               }
               <Posts posts={posts} />
-            </div>
+            </div> */}
         </section>
     </div>
   )
